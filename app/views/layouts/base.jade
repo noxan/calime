@@ -1,0 +1,22 @@
+doctype html
+
+html
+  include ../includes/head
+  body
+    div(role='navigation').navbar.navbar-default.navbar-static-top
+      .container
+        .navbar-header
+          button(data-target='.navbar-collapse', data-toggle='collapse', type='button').navbar-toggle
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(href='#').navbar-brand= appName
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') Home
+    section.content
+      div.container
+        block content
+  include ../includes/foot

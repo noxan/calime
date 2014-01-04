@@ -3,11 +3,9 @@ express = require 'express'
 
 app = express()
 
-app.get '/', (req, res) ->
-  res.end 'Hello world!'
+require('./config/express')(app)
 
-
-app.set('port', process.env.PORT || 3000)
+require('./config/routes')(app)
 
 app.listen app.get('port')
 console.log "Server started on port " + app.get('port')
