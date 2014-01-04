@@ -1,3 +1,4 @@
 *.swp
+/.nodemonignore
 /node_modules/
 /public/lib/
