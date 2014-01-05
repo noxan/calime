@@ -12,6 +12,7 @@
     "express": "3.4.7",
     "jade": "1.0.0",
     "view-helpers": "latest",
+    "formidable": "0.1.4",
     "bower": "latest",
     "grunt": "0.4.2",
     "grunt-cli": "latest",
