@@ -1,4 +1,22 @@
+fs = require 'fs'
 express = require 'express'
+mongoose = require 'mongoose'
+config = require './config/config'
+
+
+db = mongoose.connect(config.db)
+
+models_path = __dirname + "/app/models"
+walk = (path) ->
+  fs.readdirSync(path).forEach (file) ->
+    newPath = path + "/" + file
+    stat = fs.statSync(newPath)
+    if stat.isFile()
+      require newPath  if /(.*)\.(js$|coffee$)/.test(file)
+    else walk newPath  if stat.isDirectory()
+
+
+walk models_path
 
 
 app = express()
