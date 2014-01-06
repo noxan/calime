@@ -1,0 +1,13 @@
+extends ../layouts/base
+
+
+block content
+  div(ng-controller='PhotoController')
+    ul
+      li(ng-repeat='photo in photos')
+        img(src='/uploads/{{photo.filename}}',style='max-width: 400px; max-height: 400px;')
+        span {{photo.created}}
+
+
+block scripts
+  != js('controllers/photos')

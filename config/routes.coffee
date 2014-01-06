@@ -9,3 +9,4 @@ module.exports = (app) ->
 
   admin = require '../app/controllers/admin'
   app.get '/admin/', admin.index
+  app.get '/admin/photos/', admin.photos
