@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "bootstrap": "3.0.3",
+    "angular": "1.2.7",
     "jquery-file-upload": "9.5.2"
   }
 }
