@@ -62,7 +62,15 @@ exports.uploadPost = (req, res, next) ->
     if !fileInfo.validate()
       return fs.unlink file.path
 
-    fs.renameSync file.path, options.uploadDirectory + '/' + fileInfo.name
+    filename = fileInfo.name
+    fs.renameSync file.path, filename
+    photo = new Photo()
+    photo.filename = filename
+
+    photo.save (err) ->
+      if err
+        console.log err
+
     console.log fileInfo
   ).on('aborted', () ->
     tempFiles.forEach (file) ->
