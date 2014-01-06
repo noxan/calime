@@ -1,6 +1,7 @@
 express = require 'express'
 helpers = require('view-helpers')
 config = require './config'
+assets = require 'connect-assets'
 
 
 module.exports = (app) ->
@@ -8,6 +9,12 @@ module.exports = (app) ->
   app.set 'view engine', 'jade'
 
   app.set 'port', config.port
+
+  app.use assets
+    src: 'assets'
+
+  app.locals.css = css
+  app.locals.js = js
 
   app.use helpers(config.app.name)
 
