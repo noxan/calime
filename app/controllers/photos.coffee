@@ -2,6 +2,14 @@ path = require 'path'
 fs = require 'fs'
 formidable = require 'formidable'
 config = require '../../config/config'
+mongoose = require 'mongoose'
+Photo = mongoose.model 'Photo'
+
+
+exports.all = (req, res) ->
+  Photo.find().sort('-created').exec (err, photos) ->
+    if !err
+      res.jsonp(photos)
 
 
 exports.upload = (req, res) ->
