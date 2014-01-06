@@ -71,7 +71,7 @@ exports.uploadPost = (req, res, next) ->
       return fs.unlink file.path
 
     filename = fileInfo.name
-    fs.renameSync file.path, filename
+    fs.renameSync file.path, config.root + 'public/uploads/' + filename
     photo = new Photo()
     photo.filename = filename
 
