@@ -8,3 +8,4 @@ module.exports =
   port: process.env.PORT || 3000
   app:
     name: "calime"
+  db: 'mongodb://localhost/calime-dev'
