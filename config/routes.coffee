@@ -5,3 +5,6 @@ module.exports = (app) ->
   photos = require '../app/controllers/photos'
   app.get '/photos/upload/', photos.upload
   app.post '/photos/upload/', photos.uploadPost
+
+  admin = require '../app/controllers/admin'
+  app.get '/admin/', admin.index

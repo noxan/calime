@@ -1,0 +1,46 @@
+extends ../layouts/base
+
+
+block content
+  .page-header
+    h1 Admin area
+
+  h2 Content management
+  .btn-group
+    a(href='#').btn.btn-default
+      span.glyphicon.glyphicon-picture
+      br
+      span Photos
+    a(href='#').btn.btn-default
+      span.glyphicon.glyphicon-film
+      br
+      span Movies
+    a(href='#').btn.btn-default
+      span.glyphicon.glyphicon-folder-open
+      br
+      span Collections
+    a(href='#').btn.btn-default
+      span.glyphicon.glyphicon-flag
+      br
+      span Journals
+
+  h2 User management
+  .btn-group
+    a(href='#').btn.btn-default
+      span.glyphicon.glyphicon-user
+      br
+      span Accounts
+    a(href='#').btn.btn-default
+      span.glyphicon.glyphicon-lock
+      br
+      span Permissions
+
+
+block stylesheets
+  style(type='text/css').
+    .btn-group > a.btn {
+      text-align: center;
+    }
+    .glyphicon {
+      font-size: 24px;
+    }
